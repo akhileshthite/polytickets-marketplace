@@ -1,9 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-/node_modules
 .secret
 .infuraid
-config.js
 
 # dependencies
 /node_modules
@@ -39,7 +37,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-node_modules
+/node_modules
 
 #Hardhat files
 cache
