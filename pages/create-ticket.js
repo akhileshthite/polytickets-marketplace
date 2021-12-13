@@ -16,7 +16,7 @@ import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 
 export default function CreateItem() {
   const [fileUrl, setFileUrl] = useState(null)
-  const [formInput, updateFormInput] = useState({ price: '', name: '', description: '' })
+  const [formInput, updateFormInput] = useState({ price: '', name: '', description: '', location: '', link:'' })
   const router = useRouter()
 
   async function onChange(e) {
@@ -29,17 +29,18 @@ export default function CreateItem() {
         }
       )
       const url = `https://ipfs.infura.io/ipfs/${added.path}`
+      console.log(url);
       setFileUrl(url)
     } catch (error) {
       console.log('Error uploading file: ', error)
     }  
   }
   async function createMarket() {
-    const { name, description, price } = formInput
-    if (!name || !description || !price || !fileUrl) return
+    const { name, description, price, location, link } = formInput
+    if (!name || !description || !price || !location || !link || !fileUrl) return
     /* first, upload to IPFS */
     const data = JSON.stringify({
-      name, description, image: fileUrl
+      name, description, location, link, image: fileUrl
     })
     try {
       const added = await client.add(data)
@@ -90,16 +91,29 @@ export default function CreateItem() {
           className="mt-5 border rounded p-4 bg-white hover:bg-gray-200"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
-        <input
-          placeholder="Ticket price in ETH"
+        <input 
+          placeholder="Event location"
           className="mt-5 border rounded p-4 bg-white hover:bg-gray-200"
-          onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+          onChange={e => updateFormInput({ ...formInput, location: e.target.value })}
+        />
+        <input 
+          placeholder="Event link"
+          className="mt-5 border rounded p-4 bg-white hover:bg-gray-200"
+          onChange={e => updateFormInput({ ...formInput, link: e.target.value })}
         />
         <input
-          type="number"
-          min="1"
-          placeholder="How many Tickets?"
+          placeholder="Ticket price in MATIC"
           className="mt-5 border rounded p-4 bg-white hover:bg-gray-200"
+          onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+        readonly/>
+        <label className="mt-5 text-red-400 text-sm"><i>We're currently working on our business model, you can only mint 1 ticket at this moment.</i></label>
+        <input
+          type="number"
+          value="1"
+          min="1"
+          max="1"
+          placeholder="How many Tickets?"
+          className="mt-2 border rounded p-4 bg-white hover:bg-gray-200"
           onChange={e => updateFormInput({ ...formInput, quantity: e.target.value })}
         />
         <label className="mt-5 text-white">Choose Ticket Artwork 🎫 </label>
@@ -112,7 +126,7 @@ export default function CreateItem() {
         />
         {
           fileUrl && (
-            <center><Image className="rounded mt-5" width="350" src={fileUrl} /></center>
+            <center><Image height="170" width="320" className="rounded mt-5" src={fileUrl} /></center>
           )
         }
         <button onClick={createMarket} className="mt-5 border-2 border-blue-500 hover:bg-gray-900 text-2xl text-white rounded p-4 shadow-lg">

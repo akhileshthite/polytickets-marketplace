@@ -42,6 +42,7 @@ export default function CreatorDashboard() {
         owner: i.owner,
         sold: i.sold,
         image: meta.data.image,
+        name: meta.data.name,
       }
       return item
     }))
@@ -60,9 +61,10 @@ export default function CreatorDashboard() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <center><Image style={{ height: '170px' }} src={nft.image} className="rounded" /></center>
+                <center><Image height="170" width="340" src={nft.image} className="rounded" /></center>
                 <div className="p-4 bg-black">
-                  <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
+                  <p className="text-xl font-bold text-white">{nft.name}</p>
+                  <p className="text-2xl text-white">Price - {nft.price} MATIC</p>
                 </div>
               </div>
             ))
@@ -78,9 +80,10 @@ export default function CreatorDashboard() {
                 {
                   sold.map((nft, i) => (
                     <div key={i} className="border shadow rounded-xl overflow-hidden">
-                      <center><Image style={{ height: '170px' }} src={nft.image} className="rounded" /></center>
+                      <center><Image height="170" width="340" src={nft.image} className="rounded" /></center>
                       <div className="p-4 bg-black">
-                        <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
+                        <p className="text-xl font-bold text-white">{nft.name}</p>
+                        <p className="text-2xl text-white">Price - {nft.price} MATIC</p>
                       </div>
                     </div>
                   ))

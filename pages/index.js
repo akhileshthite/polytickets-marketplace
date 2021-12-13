@@ -41,6 +41,8 @@ export default function Home() {
         image: meta.data.image,
         name: meta.data.name,
         description: meta.data.description,
+        location: meta.data.location,
+        link: meta.data.link,
       }
       return item
     }))
@@ -69,16 +71,17 @@ export default function Home() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <center><Image style={{ height: '165px' }} src={nft.image} /></center>
+                <center><Image height="170" width="340" src={nft.image} /></center>
                 <div className="p-4">
-                  <p style={{ height: '64px' }} className="text-2xl font-semibold text-white">{nft.name}</p>
-                  <div style={{ height: '70px', overflow: 'hidden' }}>
+                  <p style={{ height: '40px' }} className="text-2xl font-semibold text-white">{nft.name}</p>
+                  <div className="scrollbar" style={{ height: '90px', overflowX: 'hidden', fontSize:'small' }}>
                     <p className="text-gray-400">{nft.description}</p>
-                    <p className="text-gray-400">{nft.quantity}</p>
                   </div>
+                  <p style={{ height: '30px' }} className="text-sm font-semibold text-gray-400 flex">LOCATION:&nbsp;<div className="text-white">{nft.location}</div></p>
+                  <p style={{ height: '30px' }} className="text-sm font-semibold text-gray-400">LINK: <a href={nft.link} className="text-white font-normal underline hover:no-underline" target="_blank" rel="noreferrer">{nft.link}</a></p>
                 </div>
                 <div className="p-4 bg-black">
-                  <p className="text-2xl mb-4 font-bold text-white">{nft.price} ETH</p>
+                  <p className="text-2xl mt-2 mb-2 font-bold text-white">{nft.price} MATIC</p>
                   <button className="w-full bg-blue-500 hover:bg-blue-400 text-xl text-white py-2 px-12 rounded" onClick={() => buyNft(nft)}>Buy</button>
                 </div>
               </div>

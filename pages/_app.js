@@ -17,22 +17,22 @@ function Marketplace({ Component, pageProps }) {
         </center>
         <div className="flex mt-6">
           <Link href="/">
-            <a className="ml-10 mr-14 text-lg text-white items-center bg-gray-600 border-0 py-2 px-5 focus:outline-none hover:bg-gray-500 rounded text-base">
+            <a className="ml-10 mr-14 text-lg text-white items-center bg-none border-2 border-blue-500 py-2 px-6 hover:border-blue-400 rounded-2xl text-base">
               Events
             </a>
           </Link>
           <Link href="/create-ticket">
-            <a className="mr-14 text-lg text-white text-white items-center bg-gray-600 border-0 py-2 px-5 focus:outline-none hover:bg-gray-500 rounded text-base">
+            <a className="mr-14 text-lg text-white items-center bg-none border-2 border-blue-500 py-2 px-6 hover:border-blue-400 rounded-2xl text-base">
               Sell Tickets
             </a>
           </Link>
           <Link href="/my-tickets">
-            <a className="mr-14 text-lg text-white text-white items-center bg-gray-600 border-0 py-2 px-5 focus:outline-none hover:bg-gray-500 rounded text-base">
+            <a className="mr-14 text-lg text-white items-center bg-none border-2 border-blue-500 py-2 px-6 hover:border-blue-400 rounded-2xl text-base">
               My Tickets
             </a>
           </Link>
           <Link href="/creator-dashboard">
-            <a className="mr-14 text-lg text-white text-white items-center bg-gray-600 border-0 py-2 px-5 focus:outline-none hover:bg-gray-500 rounded text-base">
+            <a className="mr-14 text-lg text-white items-center bg-none border-2 border-blue-500 py-2 px-6 hover:border-blue-400 rounded-2xl text-base">
               Dashboard
             </a>
           </Link>
