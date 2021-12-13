@@ -105,8 +105,8 @@ export default function CreateItem() {
           placeholder="Ticket price in MATIC"
           className="mt-5 border rounded p-4 bg-white hover:bg-gray-200"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
-        readonly/>
-        <label className="mt-5 text-red-400 text-sm"><i>We're currently working on our business model, you can only mint 1 ticket at this moment.</i></label>
+        />
+        <label className="mt-5 text-red-400 text-sm"><i>We are currently working on our business model, you can only mint 1 ticket at this moment.</i></label>
         <input
           type="number"
           value="1"
@@ -115,7 +115,7 @@ export default function CreateItem() {
           placeholder="How many Tickets?"
           className="mt-2 border rounded p-4 bg-white hover:bg-gray-200"
           onChange={e => updateFormInput({ ...formInput, quantity: e.target.value })}
-        />
+        readOnly/>
         <label className="mt-5 text-white">Choose Ticket Artwork 🎫 </label>
         <label className="mt-2 text-gray-400 text-sm"><i>Ideal artwork size: 650x300*</i></label>
         <input
