@@ -4,6 +4,7 @@ module.exports = {
   images: {
     domains: [
       "ipfs.infura.io",
+      "https://polytickets-marketplace.vercel.app/"
     ],
   },
 }
