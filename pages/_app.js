@@ -16,7 +16,7 @@ function Marketplace({ Component, pageProps }) {
           </h1>
         </center>
         <div className="flex mt-6">
-          <Link href="/">
+          <Link href="/index">
             <a className="ml-10 mr-14 text-lg text-white items-center bg-none border-2 border-blue-500 py-2 px-6 hover:border-blue-400 rounded-2xl text-base">
               Events
             </a>
