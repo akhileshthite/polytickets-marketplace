@@ -5,12 +5,10 @@
 <h1 align="center">PolyTickets</h1>
 
 <p aign="center">
-  <p align="center">Decentralized video sharing & social media platform on Ethereum blockchain.</p>
   <p align="center">Website: <a href="https://polytickets.on.fleek.co"></a>https://polytickets.on.fleek.co</p>
 </p>
 
 <div align="center">
-  <!--<img src="https://img.shields.io/github/v/release/AkhileshThite/DTube?color=1FC71F" alt="GitHub release" />-->
   <img src="https://img.shields.io/github/repo-size/akhileshthite/polytickets-marketplace" alt="repo size">
   <img src="https://img.shields.io/badge/Platform-Polygon-purple.svg" alt="platform">
 </div>
