@@ -11,7 +11,7 @@
 
 <div align="center">
   <img src="https://img.shields.io/github/repo-size/akhileshthite/polytickets-marketplace" alt="repo size">
-  <img src="https://img.shields.io/badge/Platform-Meter-purple.svg" alt="platform">
+  <img src="https://img.shields.io/badge/Platform-Polygon-purple.svg" alt="platform">
 </div>
 
 ## Run locally
